@@ -6,6 +6,9 @@ import {CreatePostService} from "./application/service/post/create.post.service"
 import {PostRepository} from "./infrastructure/orm/repositories/post/post.repository";
 import {PostRepositoryInterface} from "./domain/repositories/post/post.repository.interface";
 import {FindAllPostsService} from "./application/service/post/find-all.posts.service";
+import {LocaleService} from "../../common/application/services/locale.service";
+import {FindByIdPostService} from "./application/service/post/find-by-id.post.service";
+import {UpdatePostService} from "./application/service/post/update.post.service";
 
 @Module({
   controllers: [PostsController],
@@ -13,6 +16,9 @@ import {FindAllPostsService} from "./application/service/post/find-all.posts.ser
   providers: [
     CreatePostService,
       FindAllPostsService,
+      LocaleService,
+      FindByIdPostService,
+      UpdatePostService,
     {
       provide: PostRepositoryInterface,
       useClass: PostRepository

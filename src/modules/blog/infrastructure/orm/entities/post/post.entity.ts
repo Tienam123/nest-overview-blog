@@ -12,11 +12,11 @@ export class PostEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  title: string;
+  @Column('json')
+  title: Record<string, string>;
 
-  @Column()
-  body: string;
+  @Column('json')
+  body: Record<string, string>;
 
   @Column({
     type: 'enum',
