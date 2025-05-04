@@ -1,4 +1,7 @@
 import { Module } from '@nestjs/common';
+import { PostsController } from './presentation/controllers/posts/posts.controller';
 
-@Module({})
+@Module({
+  controllers: [PostsController]
+})
 export class BlogModule {}
